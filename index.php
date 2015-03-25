@@ -64,7 +64,7 @@ $sections = $rs->makeSectionArr();
                     <?php for($i=0; $i<count($sections); $i++){
                                 $section = $sections[$i];  ?>
                     <div class="sec-tile" title="<?php echo  $section->getLongDescription(); ?>">
-                        <a href="content.php?id=<?php echo $section->getId(); ?>">
+                        <a href="/<?php echo $rs->processTitle($section->getTitle()); ?>">
                            <h3><?php echo $section->getTitle(); ?></h3>
                             <p><?php echo $section->getDescription(); ?></p>
                         </a>

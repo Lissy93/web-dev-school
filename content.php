@@ -8,16 +8,21 @@
         $secId = $_GET['id'];
         $currentSection = $rs->findSection($secId);
     }
+	else if(isset($_GET['title'])){
+		$currentSection = $rs->findSectionFromTitle($_GET['title']);
+	}
     else{
         $secId = null;
         $currentSection = false;
     }
 	$tagList = "";
+if($currentSection){
 	if($currentSection->getTags()!=""){
 		for($q=0; $q<count($currentSection->getTags());$q++){
 			$k = $currentSection->getTags(); $tagsList .= $k[$q].", ";
 		} 
 	}
+}
 
 ?>
 
@@ -32,14 +37,13 @@
     <script src="js/jquery.scrollUp.min.js"></script>
     <meta charset="UTF-8">
 	<meta name="description" content="<?php echo $tagsList; ?>">
-	<meta name="keywords" content="<?php echo $currentSection->getDescription(); ?>" >
-    <title><?php echo $currentSection->getTitle(); ?> | web-dev-school</title>
+	<meta name="keywords" content="<?php if($currentSection){echo $currentSection->getDescription(); } ?>" >
+	<title><?php if($currentSection){ echo $currentSection->getTitle(); } ?> | web-dev-school</title>
     <!--[if gte IE 9]>
         <style type="text/css">  .gradient {filter: none;} </style>
     <![endif]-->
 </head>
 <body class="content-page">
-	
 	    <script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -48,8 +52,8 @@
 			ga('create', 'UA-53932003-1', 'auto');
 			ga('send', 'pageview');
 		</script>
-	
-    <header>
+
+	<header>
         <div class="nav-bar">
             <a href="/index.php">
                 <img src="/img/lgo.png" class="logo-small"  alt="The logo for Web Dev School - A WiFi transmission symbol"/>
@@ -71,7 +75,7 @@
                 <ul>
                     <?php for ($i=0; $i<count($sections); $i++){ ?>
                     <li>
-                        <a href="content.php?id=<?php echo $sections[$i]->getId(); ?>">
+                        <a href="/<?php echo $rs->processTitle($sections[$i]->getTitle()); ?>">
                             <?php echo $sections[$i]->getTitle(); ?>
                         </a>
                     </li>

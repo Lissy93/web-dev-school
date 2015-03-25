@@ -69,6 +69,21 @@ class ReadSections {
         }
         return false;
     }
+	
+	public function findSectionFromTitle($title){
+ 		$sections = $this->makeSectionArr();
+        for($i=0; $i<count($sections); $i++){
+            if($this->processTitle($sections[$i]->getTitle())==$this->processTitle($title)){
+                return $sections[$i]; //Found it!
+            }
+        }
+        return false;
+	}
+	
+	public function processTitle($string){
+		$string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+   		return strtolower(preg_replace('/[^A-Za-z0-9\-]/', '', $string)); // Removes special chars.
+	}
 
 
 }
