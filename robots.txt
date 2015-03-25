@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: 
+
+Sitemap: http://web-dev.as93.net/sitemap.xml
+
+User-agent: Libwww-perl
+Disallow: /

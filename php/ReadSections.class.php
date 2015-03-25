@@ -4,7 +4,7 @@
  * User: Alicia
  * Date: 09/11/13
  * Time: 11:16
- * To change this template use File | Settings | File Templates.
+ * This class reads the XML database and creates a list of XML objects
  */
 
 class ReadSections {
@@ -82,7 +82,8 @@ class ReadSections {
 	
 	public function processTitle($string){
 		$string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-   		return strtolower(preg_replace('/[^A-Za-z0-9\-]/', '', $string)); // Removes special chars.
+   		$string =  preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+		return strtolower($string);	//Makes string lower case and returns
 	}
 
 

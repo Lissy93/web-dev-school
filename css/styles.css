@@ -326,6 +326,11 @@ p.tag-content{
 }
 
 
+.scroll-obj{
+	position: fixed; z-index: 2147483647; display: none;
+}
+
+
 
 /*------------------------------------*\
     $SIDE-NAV
@@ -499,6 +504,19 @@ p.seperator{
 
 .stl{ height: 190px;}
 .stl p { height: 140px;}
+
+
+/*-------------------------------------*\
+	$PRINTING
+\*-------------------------------------*/
+@media print { 
+	#header, #footer, #menu { display: none; } 
+	body { font: 12pt georgia,serif; } 
+	h1 { font-size: 18pt; } 
+	h2 { font-size: 16pt; color: #000; }
+}
+
+
 
 /*------------------------------------*\
     $GRADIENTS

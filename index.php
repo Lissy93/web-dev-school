@@ -12,12 +12,19 @@ $sections = $rs->makeSectionArr();
 <head>
     <link href="css/styles.css" rel="stylesheet"/>
     <link href='http://fonts.googleapis.com/css?family=Share+Tech' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<link rel="canonical" href="http://web-dev.as93.net" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
     <script src="js/jquery.scrollUp.min.js"></script>
     <meta charset="UTF-8">
-	<meta name="description" content="Web Dev School is a collestion of free interactive learning resources and tutorials for getting started with web development">
+	<meta name="description" 
+		  content="Web Dev School is a collestion of free interactive learning 
+				   resources and tutorials for getting started with web development">
+	<meta name="keywords" 
+		  content="HTML, HTML5, XHTML, CSS, CSS3, JavaScript, JS, jQuery, AJAX, 
+				   Angular, websites, web sites, web coding, learning, tutorials,
+				   videos, interactive content, quizzes, tests, teaching resources,
+				   amazingness">
     <meta name="author" content="Alicia Sykes">
 	<title>Web Dev School | Free web coding resources</title>
 </head>
@@ -90,6 +97,6 @@ $sections = $rs->makeSectionArr();
         </div>
     </footer>
     <script src="js/page.js"></script>
-    <a id="scrollUp" href="#top" title="Scroll to top" style="position: fixed; z-index: 2147483647; display: none;">Scroll to top</a>
+    <a id="scrollUp" href="#top" title="Scroll to top" class="scroll-obj">Scroll to top</a>
 </body>
 </html>

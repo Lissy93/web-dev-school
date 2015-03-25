@@ -3,3 +3,6 @@ RewriteRule ^([0-9]+)$ content.php?id=$1
 RewriteRule ^([0-9]+)/$ content.php?id=$1
 RewriteRule ^([a-zA-Z0-9_-]+)$ content.php?title=$1
 RewriteRule ^([a-zA-Z0-9_-]+)/$ content.php?title=$1
+
+RewriteCond %{HTTP_USER_AGENT} libwww-perl.* 
+RewriteRule .* – [F,L]

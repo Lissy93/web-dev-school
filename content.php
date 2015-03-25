@@ -36,9 +36,14 @@ if($currentSection){
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="js/jquery.scrollUp.min.js"></script>
     <meta charset="UTF-8">
-	<meta name="description" content="<?php echo $tagsList; ?>">
-	<meta name="keywords" content="<?php if($currentSection){echo $currentSection->getDescription(); } ?>" >
-	<title><?php if($currentSection){ echo $currentSection->getTitle(); } ?> | web-dev-school</title>
+	<?php if($currentSection){ ?>
+		<meta name="description" content="<?php echo $tagsList; ?>">
+		<meta name="keywords" content="<?php echo $currentSection->getDescription(); ?>" >
+		<title><?php echo $currentSection->getTitle(); ?> | web-dev-school</title>
+		<link rel="canonical" href="http://web-dev.as93.net/<?php echo $rs->processTitle($currentSection->getTitle()); ?>" />
+	<?php } else { ?>
+		<title>Page not found | web-dev-school</title>
+	<?php } ?>
     <!--[if gte IE 9]>
         <style type="text/css">  .gradient {filter: none;} </style>
     <![endif]-->
