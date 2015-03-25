@@ -12,13 +12,6 @@
         $secId = null;
         $currentSection = false;
     }
-	$tagList = "";
-	if($currentSection->getTags()!=""){
-		for($q=0; $q<count($currentSection->getTags());$q++){
-			$k = $currentSection->getTags(); $tagsList .= $k[$q].", ";
-		} 
-	}
-
 ?>
 
 <!DOCTYPE html>
@@ -31,24 +24,12 @@
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="js/jquery.scrollUp.min.js"></script>
     <meta charset="UTF-8">
-	<meta name="description" content="<?php echo $tagsList; ?>">
-	<meta name="keywords" content="<?php echo $currentSection->getDescription(); ?>" >
-    <title><?php echo $currentSection->getTitle(); ?> | web-dev-school</title>
+    <title>web-dev</title>
     <!--[if gte IE 9]>
         <style type="text/css">  .gradient {filter: none;} </style>
     <![endif]-->
 </head>
 <body class="content-page">
-	
-	    <script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			ga('create', 'UA-53932003-1', 'auto');
-			ga('send', 'pageview');
-		</script>
-	
     <header>
         <div class="nav-bar">
             <a href="/index.php">
@@ -78,16 +59,6 @@
                     <?php } ?>
                 </ul>
                 <a href="/" class="returnHome">Click here to rerturn to homepage</a>
-				<br /><br />
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- AS93 Computing [Vertical] -->
-				<ins class="adsbygoogle"
-					 style="display:inline-block;width:198px;height:350px"
-					 data-ad-client="ca-pub-0513771474172316"
-					 data-ad-slot="2330707155"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>	
             </nav>
         </div>
 
@@ -101,19 +72,7 @@
             <?php } else { ?>
             <article>
                 <h2><?php echo $currentSection->getTitle(); ?></h2>
-				
                 <h3><?php echo $currentSection->getDescription(); ?></h3>
-				
-				<?php if($currentSection->getLongDescription()!=""){?>
-					<p class="long-description"><?php echo $currentSection->getLongDescription(); ?></p>
-				<?php } ?>
-				<?php 
-				if($currentSection->getTags()!=""){?>
-                    <h4 class="tag-title">Tags</h4>
-                    <?php for($q=0; $q<count($currentSection->getTags());$q++){?>
-						<p class="tag-content"><?php $k = $currentSection->getTags(); echo $k[$q]?></p>
-                    <?php } ?><br /><br />
-                <?php } ?>
                 <?php if($currentSection->getYoutube()!=""){?>
                     <iframe width="640" height="480" src="$currentSection->getYoutube()" frameborder="0" allowfullscreen></iframe>
                 <?php }
@@ -131,20 +90,7 @@
                     <p class="article"><?php echo $currentSection->getArticle()?></p>
                     <br /><br />
                 <?php }
-						  ?>
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- AS93 Computing [banner] -->
-				<ins class="adsbygoogle"
-					 style="display:inline-block;width:728px;height:90px"
-					 data-ad-client="ca-pub-0513771474172316"
-					 data-ad-slot="4042942750"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>	
-				
-			  <?php				  
-						  
-			  	if($currentSection->getLinks()!=""){?>
+                if($currentSection->getLinks()!=""){?>
                     <h3>Links</h3>
                     <?php for($q=0; $q<count($currentSection->getLinks());$q++){?>
                         <a href="<?php $k = $currentSection->getLinks(); echo $k[$q]["path"]; ?>">
@@ -158,16 +104,8 @@
                 <?php } ?>
             </article>
             <?php } ?>
-			
-					<!-- AS93 Computing [banner] -->
-				<ins class="adsbygoogle"
-					 style="display:inline-block;width:728px;height:90px"
-					 data-ad-client="ca-pub-0513771474172316"
-					 data-ad-slot="4042942750"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>	
         </div>
+
     </div>
 
     <footer>

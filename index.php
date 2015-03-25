@@ -17,12 +17,9 @@ $sections = $rs->makeSectionArr();
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="js/jquery.scrollUp.min.js"></script>
     <meta charset="UTF-8">
-	<meta name="description" content="Web Dev School is a collestion of free interactive learning resources and tutorials for getting started with web development">
-    <meta name="author" content="Alicia Sykes">
-	<title>Web Dev School | Free web coding resources</title>
+    <title>web-dev</title>
 </head>
 <body class="home-page">
-	<a href="https://plus.google.com/115412407591975827378" rel="publisher" class="abs">Google+</a>
     <header>
         <div class="nav-bar">
             <img src="/img/lgo.png" class="logo-small" alt="The logo for Web Dev School - A WiFi transmission symbol"/>
@@ -32,7 +29,6 @@ $sections = $rs->makeSectionArr();
                 <button type="button" value="Go" class="cmdSearch" >
                     <img src="/img/search.png" alt="Search" class="imgSearch"/>
                 </button>
-				
             </div>
         </div>
     </header>
@@ -51,11 +47,6 @@ $sections = $rs->makeSectionArr();
                         <br />
                     </div>
                 </a>
-				 <a href="computer-science-resources.php">
-					<div class="add-page-link">
-							<p>Computing Resources</p>
-					</div>
-				</a>
             </div>
         </article>
         <div class="content-inner">
@@ -63,14 +54,11 @@ $sections = $rs->makeSectionArr();
                 <div class="tile-wrap">
                     <?php for($i=0; $i<count($sections); $i++){
                                 $section = $sections[$i];  ?>
-                    <div class="sec-tile" title="<?php echo  $section->getLongDescription(); ?>">
+                    <div class="sec-tile">
                         <a href="content.php?id=<?php echo $section->getId(); ?>">
                            <h3><?php echo $section->getTitle(); ?></h3>
                             <p><?php echo $section->getDescription(); ?></p>
                         </a>
-						<span class="hide">
-							<?php echo $section->getLongDescription(); ?>
-						</span>
                     </div>
                     <?php } ?>
                 </div>
@@ -80,15 +68,18 @@ $sections = $rs->makeSectionArr();
 
     <footer>
         <div class="footer-wrapper">
-            <p>&#169; <a href="http://aliciasykes.com">Alicia Sykes</a> 2015</p>
+            <p>&#169; <a href="http://aliciasykes.com">Alicia Sykes</a> 2013</p>
             <p class="seperator">|</p>
-            <p>
-				<a href="https://github.com/Lissy93/web-dev-school"  target="_blank">
-					Click here to view the source on GitHub
-				</a>
-			</p>
+            <p id="opener">Click here to view disclaimer</p>
         </div>
     </footer>
+    <div id="dialog" title="Disclaimer" class="disclaimer-dialog">
+        <p>Disclaimer: This site has been constructed as coursework for module U08054 Web Technology, at Oxford Brookes
+            University.  It is not a working website and is not connected with any site or individual referenced.
+            The views and opinions expressed within these pages are personal and should not be construed as reflecting
+            the views and opinions of Oxford Brookes University.
+        </p>
+    </div>
     <script src="js/page.js"></script>
     <a id="scrollUp" href="#top" title="Scroll to top" style="position: fixed; z-index: 2147483647; display: none;">Scroll to top</a>
 </body>

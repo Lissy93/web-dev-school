@@ -93,35 +93,10 @@ p.article{
     text-shadow: 0px 1px 1px rgb(150,150,150);
 }
 
-p.article.links{	
+p.article.links{
     font-size: 20px;
     display: inline;
 }
-
-p.long-description, p.article.links, p.tag-content{
-	text-shadow: none;
-	color: #000000;
-	font-family: 'Share Tech', sans-serif;
-}
-
-h4.tag-title{
-	font-size: 16px;
-	font-weight:bold;
-	text-shadow: none;
-	display: inline;
-}
-
-p.tag-content{
-	display: inline;
-	font-size: 16px;
-	margin-left: 10px;
-	background: rgba(100,100,100,.4);
-	padding: 4px;
-	border-radius: 4px;
-	cursor: default;
-}
-
-
 
 /*------------------------------------*\
     $HEADER-BAR
@@ -242,9 +217,9 @@ p.tag-content{
 }
 
 .add-page-link{
-    width: 220px;
+    width: 200px;
     height: 10px;
-    margin-top: 8px;
+    margin-top: 18px;
     padding: 0 0 35px 0px;
     background: rgba(10,10,10,.6);
     box-shadow: inset 0 0 5px #000000;
@@ -289,7 +264,6 @@ p.tag-content{
     border-radius: 5px;
     cursor: pointer;
 }
-
 
 .sec-tile p, .sec-tile h3{
     margin: 8px;
@@ -340,6 +314,7 @@ p.tag-content{
     border-bottom: none;
     border-radius: 6px 0 0 6px;
 
+
 }
 
 .side-nav li{
@@ -365,7 +340,6 @@ p.tag-content{
     font-size: 13px;
     padding: 5px;
 }
-
 
 /*------------------------------------*\
     $FOOTER-SECTION
@@ -493,12 +467,6 @@ p.seperator{
     margin-right: 5px;
 }
 
-.abs{position: absolute; }
-.hide{display:none;}
-
-
-.stl{ height: 190px;}
-.stl p { height: 140px;}
 
 /*------------------------------------*\
     $GRADIENTS
