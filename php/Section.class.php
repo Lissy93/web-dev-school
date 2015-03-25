@@ -11,11 +11,13 @@ class Section {
     private $id;
     private $title;
     private $description;
+	private $longDescription;
     private $youtube;
     private $prezi;
     private $googleDoc;
     private $article;
     private $links = array();
+	private $tags = array();
     private $author;
 
     /**
@@ -83,6 +85,22 @@ class Section {
     {
         return $this->description;
     }
+	
+	    /**
+     * @param mixed $description
+     */
+    public function setLongDescription($longDescription)
+    {
+        $this->longDescription = $longDescription;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLongDescription()
+    {
+        return $this->longDescription;
+    }
 
     /**
      * @param mixed $googleDoc
@@ -114,6 +132,24 @@ class Section {
     public function getLinks()
     {
         return $this->links;
+    }
+
+	
+	
+    /**
+     * @param array $tags
+     */
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+    }
+
+    /**
+     * @return array
+     */
+    public function getTags()
+    {
+        return $this->tags;
     }
 
     /**
