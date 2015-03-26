@@ -41,6 +41,10 @@
 		<tags>
 			<tag>HTML elemnts</tag>
 			<tag>Attributes</tag>
+			<tag>HTML properties</tag>
+			<tag>HTML</tag>
+			<tag>HTML5</tag>
+			<tag>Build website</tag>
 		</tags>
         <author>Alicia Sykes</author>
     </section>
@@ -49,7 +53,14 @@
         <id>2</id>
         <title>CSS Introduction</title>
         <description>Key information you need to know to get started and use CSS3 for styling your web pages</description>
-        <longDescription></longDescription>
+        <longDescription>
+			As we've seen HTML can be used to build out the structure of your website, and dissplay content,
+			in the form of text, images, and multimedia. But everything you write in HTML will just display using
+			the browsers default styles, usually Times New Roman and in black and white. &lt;br&gt;&lt;br&gt;
+			To change the appearence of your web content, we add styles to it using CSS. &lt;br&gt;&lt;br&gt;
+			CSS stands for cascading style sheets, and the latest version is CSS3. &lt;br&gt;&lt;br&gt;
+			In this article we'll show you how to use CSS to add styles to your HTML web page.
+		</longDescription>
 		<youtube/>
         <prezi>
             http://prezi.com/embed/xt7lxl9fjwco/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined
@@ -66,7 +77,13 @@
                 <path>http://css-tricks.com/</path>
             </link>
         </links>
-		<tags />
+		<tags>
+			<tag>CSS</tag>
+			<tag>CSS3</tag>
+			<tag>Cascading Style Sheets</tag>
+			<tag>rule sets</tag>
+			<tag>classes</tag>
+		</tags>
         <author>Alicia Sykes</author>
     </section>
 	
@@ -82,7 +99,11 @@
         <googleDoc/>
         <article/>
         <links />
-		<tags />
+		<tags>
+			<tag>JavaScript</tag>
+			<tag>JS</tag>
+			<tag>Client side</tag>
+		</tags>
         <author>Alicia Sykes</author>
     </section>
 </content>
