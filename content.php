@@ -72,6 +72,8 @@ if($currentSection){
             </div>
         </div>
     </header>
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5513d22b43988ac0" async="async"></script>
 
     <div class="main-content content">
         <div class="side-nav">
