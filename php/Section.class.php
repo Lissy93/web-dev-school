@@ -12,7 +12,7 @@ class Section {
     private $title;
     private $description;
 	private $longDescription;
-    private $youtube;
+    private $youtube = array();
     private $prezi;
     private $googleDoc;
     private $article;

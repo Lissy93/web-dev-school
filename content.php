@@ -124,10 +124,7 @@ if($currentSection){
                     <?php for($q=0; $q<count($currentSection->getTags());$q++){?>
 						<p class="tag-content"><?php $k = $currentSection->getTags(); echo $k[$q]?></p>
                     <?php } ?><br /><br />
-                <?php } ?>
-                <?php if($currentSection->getYoutube()!=""){?>
-                    <iframe width="640" height="480" src="$currentSection->getYoutube()" frameborder="0" allowfullscreen></iframe>
-                <?php }
+                <?php } 
                 if($currentSection->getPrezi()!=""){?>
                     <iframe src="<?php echo $currentSection->getPrezi()?>" width="750" height="450" frameBorder="0"></iframe>
                     <br /><br />
@@ -141,6 +138,16 @@ if($currentSection){
                 if($currentSection->getArticle()!=""){?>
                     <p class="article"><?php echo $currentSection->getArticle()?></p>
                     <br /><br />
+                <?php }
+						  
+				  if(count($currentSection->getYoutube())>0){ ?>
+                    <h3>Videos</h3>
+                    <?php for($q=0; $q<count($currentSection->getYoutube());$q++){?>
+						<iframe width="420" height="315"
+							src="<?php $k = $currentSection->getYoutube(); echo $k[$q]; ?>">
+						</iframe>
+                        <br />
+                    <?php } ?>
                 <?php }
 						  ?>
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -185,16 +192,13 @@ if($currentSection){
         <div class="footer-wrapper">
             <p>&#169; <a href="http://aliciasykes.com">Alicia Sykes</a> 2013</p>
             <p class="seperator">|</p>
-            <p id="opener">Click <a>here</a> to view disclaimer</p>
+            <p id="opener">
+				<a href="https://github.com/Lissy93/web-dev-school"  target="_blank">
+					Click here to view the source on GitHub
+				</a>
+			</p>
         </div>
     </footer>
-    <div id="dialog" title="Disclaimer" class="disclaimer-dialog">
-        <p>Disclaimer: This site has been constructed as coursework for module U08054 Web Technology, at Oxford Brookes
-            University.  It is not a working website and is not connected with any site or individual referenced.
-            The views and opinions expressed within these pages are personal and should not be construed as reflecting
-            the views and opinions of Oxford Brookes University.
-        </p>
-    </div>
     <script src="js/page.js"></script>
 </body>
 </html>

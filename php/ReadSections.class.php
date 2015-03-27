@@ -31,7 +31,6 @@ class ReadSections {
             $sectionObj->setTitle($xml->section[$i]->title);
             $sectionObj->setDescription($xml->section[$i]->description);
 			$sectionObj->setLongDescription($xml->section[$i]->longDescription);
-            $sectionObj->setYoutube($xml->section[$i]->youtube);
             $sectionObj->setPrezi($xml->section[$i]->prezi);
             $sectionObj->setGoogleDoc($xml->section[$i]->googleDoc);
             $sectionObj->setArticle($xml->section[$i]->article);
@@ -42,12 +41,20 @@ class ReadSections {
                 array_push($links, $link);
             }
             $sectionObj->setLinks($links);
+			
 			$tags=array();
             for($q=0;$q<count($xml->section[$i]->tags->tag);$q++){
                 $tag = $xml->section[$i]->tags->tag[$q];
                 array_push($tags, $tag);
             }
-            $sectionObj->setTags($tags);
+			$sectionObj->setTags($tags);
+			
+			$videos=array();
+            for($q=0;$q<count($xml->section[$i]->videos->youtube);$q++){
+                $youtube = $xml->section[$i]->videos->youtube[$q];
+                array_push($videos, $youtube);
+            }
+            $sectionObj->setYoutube($videos);
 
             array_push($results, $sectionObj);
 

@@ -14,7 +14,7 @@
 			Everything in these tutorials relates to HTML5, which is the latest version, and will continue to be 
 			for the next few years.
 		</longDescription>
-        <youtube/>
+        <videos/>
         <prezi>
             http://prezi.com/embed/n4wcoyyf7k1j/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined
         </prezi>
@@ -61,7 +61,7 @@
 			CSS stands for cascading style sheets, and the latest version is CSS3. &lt;br&gt;&lt;br&gt;
 			In this article we'll show you how to use CSS to add styles to your HTML web page.
 		</longDescription>
-		<youtube/>
+		<videos/>
         <prezi>
             http://prezi.com/embed/xt7lxl9fjwco/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined
         </prezi>
@@ -92,13 +92,18 @@
         <title>JavaScript Introduction</title>
         <description>Adding dynamic functionality to webpages with basic JavaScript</description>
 		<longDescription></longDescription>
-        <youtube/>
+        <videos/>
         <prezi>
             https://prezi.com/embed/dmlgm9m_dxql/?bgcolor=ffffff&amp;lock_to_path=1&amp;autoplay=0&amp;autohide_ctrls=0#
         </prezi>
         <googleDoc/>
         <article/>
-        <links />
+        <links>
+			<link>
+				<text>JavaScript Operators</text>
+				<path>http://www.howtocreate.co.uk/tutorials/javascript/operators</path>
+			</link>
+		</links>
 		<tags>
 			<tag>JavaScript</tag>
 			<tag>JS</tag>
