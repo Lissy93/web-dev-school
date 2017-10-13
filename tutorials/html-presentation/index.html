@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>HTML5 Tutorial</title>
+
+		<meta name="description" content="HTML is the simple language used to define the layouts of web pages,
+		this tutorial will give you a broad overview of what can be done with it">
+		<meta name="author" content="Alicia Sykes">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Custom styles added by alicia @Lissy_Sykes -->
+		<link rel="stylesheet" href="css/custom-styles.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- All Slides go within this container -->
+			<div class="slides">
+
+				<!-- Title Slide -->
+				<section>
+					<h1>HTML5</h1>
+					<h3>Hyper Text Markup Language</h3>
+					<h4>How to make web pages</h4>
+					<p>
+						<small>Created by <a href="http://aliciasykes.com">Alicia Sykes</a> /
+							<a href="http://twitter.com/lissy_sykes">@lissy_sykes</a> <br>
+							Presentation built with <a href="https://github.com/hakimel/reveal.js">reveal.js</a> by
+							<a href="http://hakim.se">Hakim El Hattab</a>
+						</small>
+					</p>
+				</section>
+
+				<!-- What is HTML Slide -->
+				<section >
+					<h2>What is HTML?</h2>
+					<p>
+						HTML (Htyper Text Markup Language) is a markup language used to make websites, or define web components in a web application
+					</p>
+					<p>
+						HTML5 is the latest version of HTML and has many new features such as multimedia support and semantic layouts
+					</p>
+					
+				</section>
+
+				<!-- Introduction to html -->
+				<section data-background="#0A4330">
+
+					<!-- First slide keywords -->
+					<section>
+						<h2>3 keywords</h2>
+						<h5>HTML web pages are made up of a series of components, lets look at the structure of these components</h5>
+						<ul>
+							<li>Tag</li>
+							<li>Element</li>
+							<li>Attribute</li>
+						</ul><br>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+
+					<!-- Sub-Section -->
+					<section>
+						<h2>Tags</h2>
+						<p>
+							A tag will have the name of the type of component surrounded in angle brackets
+						</p>
+						<pre><span>Example of a title tag</span><code><title>Hello World!</title></code></pre>
+					</section>
+
+					<!-- Sub-Section -->
+					<section>
+						<h2>Elements</h2>
+						<p>
+							An element is made up of 2 tags, with content in the middele. The text in the closing 
+							tag is exactley the same as the text in the opening tag, but with a '/'
+						</p>
+						<pre><span>Example of a heading tag</span><code><h1>I am a heading</h1></code></pre>
+					</section>
+					
+					<!-- Sub-Section -->
+					<section>
+						<h2>Attributes</h2>
+						<p>
+							An attribute is used to add additionl information to a HTML element<br>
+							Attributes follow this structure: Attribute name followed by equals followed by value in quotations
+						</p>
+						<pre><span>Example of an attribute</span><code><p class="myText">Hello World!</p></code></pre>
+					</section>
+
+				</section>
+
+				<!-- HTML text -->
+				<section data-background="#8181F7">
+					<section>
+						<h2>Text</h2>
+						<p>
+							There are several ways of writing text to a web page
+						</p>
+						</section>
+					
+					<section>
+						<h2>The paragraph tag</h2>
+						<pre><span>Example of a p tag</span><code><p>I am a Paragraph</p></code></pre>
+					</section>
+					<section>
+						<h2>The span tag</h2>
+						<pre><span>Example of a span tag</span><code><span>Im inline text</span></code></pre>
+					</section>
+					<section>
+						<h2>The heading tags</h2>
+						<pre><span>Example of a main heading tag</span><code><h1>Main Title</h1></code></pre>
+						<pre><span>Example of a sub heading tag</span><code><h2>Sub heading</h2></code></pre>
+						<pre><span>Example of ah3 tag</span><code><h3>less importnt heading</h3></code></pre>
+						<p>... all the way to h6</p>
+						<pre><span>Example of a h6 tag</span><code><h6>Very un-important title!</h6></code></pre>
+					</section>
+					<section>
+						<h2>Break line</h2>
+						<pre><span>Example of a br tag</span><code><span>Im on line 1<br> and I'm on line 2</span></code></pre>
+					</section>
+					
+				</section>
+
+				
+				<!-- HTML Comments -->
+				<section>
+					<h2>HTML Comments</h2>
+					<p>
+						Often you want to supllly a bit of extra information about a a part of your page, such as what the
+						purpose of it is, where it's used etc.. This can make your HTMLpage more maintainable in the
+						future and easier to understand for other developers.
+					</p>
+					<br>
+					<p><b>Comments are ignored by the browser</b></p>
+					<br>
+					<pre><span>The syntax for a comment</span><code><!--This is a comment --></code></pre>
+				</section>
+
+				<!-- HTML links -->
+				<section data-background="#370A43">
+					<section>
+						<h2>Hyperlinks</h2>
+						<p>
+							A hyperlink is an element that redirects the user to another page, website or resource when clicked
+						</p>
+						<p>
+							By default a HTML link is blue and underlined, and then purple when clicked, but this is easy to change	
+						</p>
+						<p>
+							You can put any conent inside a hyperkink tag, not just text. This includes images, div's and formated text
+						</p>
+						</section>
+					
+					<section>
+						<h2>
+							How to use a hyperlink
+						</h2>
+						<p>
+							Use the href attribute to define where the link will point to
+						</p>
+						
+						<pre><span>Example of a hyperlink</span><code><a href="http://web-dev.as93.net" title="Free web dev tuts">Click Me!</a></code></pre>
+					</section>
+				</section>
+
+				<!-- HTML images -->
+				<section data-background="#BCF5A9">
+					<section>
+						<h2>Images</h2>
+						<p>
+							In HTML it is easy to add an image to your page
+						</p>
+						<pre><code><img src="path/to/image.png" alt="this is an picture of.." width="75"></code></pre>
+						</section>
+					
+					<section>
+						<h2>
+							Attributes for the image tag
+						</h2>
+						<ul>
+							<li><strong>src</strong> - this is the source of the image it can be absolute or relative</li>
+							<li><strong>alt</strong> - this is the alternative text that will be read by screen savers, 
+								shown by text only browsers, pr displayed if the image can't be loaded</li>
+							<li><strong>height</strong> - the height of the image <i>optional</i></li>
+							<li><strong>width</strong> - the width of the image <i>optional</i></li>
+						</ul>
+					</section>
+				</section>
+				
+				<section data-background="#F2F5A9">
+					<section>
+						<h1>HTML Forms</h1>
+						<h3>In this video we will look at</h3>
+						<ul>
+							<li>Inputing text</li>
+							<li>Inputing dates</li>
+							<li>Inputing passwords</li>
+							<li>Radio buttons</li>
+							<li>List groups</li>
+							<li>Textareas</li>
+							<li>Image uplads</li>
+							<li>Form controlls</li>
+						</ul>
+					</section>
+					<section>
+						<iframe width="730" height="560" class="center"
+							src="https://www.youtube.com/embed/OVPfD8UU6po" 
+							frameborder="0" allowfullscreen></iframe>
+					</section>
+				</section>
+
+				<!-- HTML Multimedia -->
+				<section data-background="#FE9A2E">
+					<section>
+						<h2>
+							Multimedia in HTML5
+						</h2>
+						<p>
+							In this section we look at embeding sound, video and other 
+							multimedia into your webpages using hTML5
+						</p>
+					</section>
+					<section>
+						<h3>Audio</h3>
+						<p>Before HTML5 there was no standard for playing audio on the web, they could
+							only be played using a plugin</p>
+						<pre><span>Example of audio element</span><code><audio controls>
+  <source src="homer-simpson.ogg" type="audio/ogg">
+  <source src="homer-simpson.mp3" type="audio/mpeg">
+Doh! Your browser does not support the audio element.
+</audio></code></pre>
+						<br>
+						<small style="text-align: left">
+							The audio tags themself are straitforward.<br> 
+							The 'controls' keyword specifies that the user can see the controlls.<br> 
+							Then the browser will look through every source element within the audio 
+							tag until it see's one it can read and it'll play that.<br>
+							If the browser doesn't support any of the formats it will display the message on the
+							last line.
+						</small>
+					</section>
+					<section>
+						<h2>Browser Support</h2>
+							<table>
+								<tr>
+								<th>Browser</th>
+								<th>MP3</th>
+								<th>Wav</th>
+								<th>Ogg</th>
+								</tr>
+								<tr>
+								<td>Internet Explorer</td>
+								<td>YES</td>
+								<td>NO</td>
+								<td>NO</td>
+								</tr>
+								<tr>
+								<td>Chrome</td>
+								<td>YES</td>
+								<td>YES</td>
+								<td>YES</td>
+								</tr>
+								<tr>
+								<td>Firefox</td>
+								<td>YES</td>
+								<td>YES</td>
+								<td>YES</td>
+								</tr>
+								<tr>
+								<td>Safari</td>
+								<td>YES</td>
+								<td>YES</td>
+								<td>NO</td>
+								</tr>
+								<tr>
+								<td>Opera</td>
+								<td>YES</td>
+								<td>YES</td>
+								<td>YES</td>
+								</tr>
+								</table>
+					</section>
+					
+					<section>
+						<h2>Videos in HTML</h2>
+						<p>
+							Video's work in much the same was as audio in HTML5.<br>
+							They create a standard for playing videos in modern web pages.
+						</p>
+						<pre><span>Example of Video tag</span><code><video width="320" height="240" autoplay>
+  <source src="adventure-time.mp4" type="video/mp4">
+  <source src="adventure-time.ogg" type="video/ogg">
+Your browser does not support the video tag. :(
+</video></code></pre>
+					</section>
+					<section>
+						<h3>HTML Plugins</h3>
+						<p>
+							Helper applications or plugins can extend the standard functionality of the 
+							web browser.<br>
+							They often use the embed or object tags. <br>
+							For example a Java applet 
+						</p>
+					</section>
+				</section>
+
+				<!-- New features of HTML5 -->
+				<section data-background="#01DF01">
+					<section>
+						<h2>HTML5 New Semantic Elements</h2>
+						<small>In previous versions of HTML developers would have div's all over the place with 
+							different classes and id's to represent different parts of the web page, such as
+							footer, header, nav...</small>
+						<p>
+							To solve this problem HTML5 created elements specially for these commonly used ares.<br>
+							This can help developers lay there websites out in a more semantic way too.<br>
+						</p>
+					</section>	
+					
+					<section>
+						<img src="https://almosthumor.files.wordpress.com/2011/09/html5demo1.jpg" />
+					</section>
+					
+					<section>
+					
+						<ul>
+							<li>Defines an article in the document<pre><code><article><!-- CONTENT--></article></code></pre></li>
+							<li>Defines content aside from the page content<pre><code><asside><!-- CONTENT--></asside></code></pre></li>
+							<li>Defines a part of text that might be formatted in a different direction from other text<pre><code><bdi><!-- CONTENT--></bdi></code></pre></li>
+							<li>Defines content aside from the page content<pre><code><asside><!-- CONTENT--></asside></code></pre></li>
+							<li>Defines additional details that the user can view or hide<pre><code><details><!-- CONTENT--></details></code></pre></li>
+							<li>Defines a dialog box or window<pre><code><dialog><!-- CONTENT--></dialog></code></pre></li>						
+						</ul>
+					</section>
+					
+					<section>
+						<ul>
+							<li>Defines a caption for a figure element<pre><code><figcaption><!-- CONTENT--></figcaption></code></pre></li>
+							<li>Defines self-contained content, like illustrations<pre><code><figure><!-- CONTENT--></figure></code></pre></li>
+							<li>Defines a footer for the document or a section<pre><code><footer><!-- CONTENT--></footer></code></pre></li>
+							<li>Defines a header for the document or a section<pre><code><header><!-- CONTENT--></header></code></pre></li>
+							<li>Defines the main content of a document<pre><code><main><!-- CONTENT--></main></code></pre></li>
+							<li>Defines marked or highlighted text<pre><code><mark><!-- CONTENT--></mark></code></pre></li>
+						</ul>
+					
+					</section>
+					
+					
+				</section>
+				
+				
+				<section>
+				
+				</section>
+				
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

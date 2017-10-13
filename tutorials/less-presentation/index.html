@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>LESS CSS Presentation</title>
+
+		<meta name="description" content="LESS is a CSS pre-processor to help you write more organised stylehseets">
+		<meta name="author" content="Alicia Sykes">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+ 		<link rel="stylesheet" href="css/reveal.css">
+ 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- All Slides go within this container -->
+			<div class="slides">
+
+				<!-- Title Slide -->
+				<section>
+					<section>
+						<h1>LESS CSS</h1>
+						<h3>Writing awsome stylesheets</h3>
+						<p>
+							<small style="display:none">Created by <a href="http://aliciasykes.com">Alicia Sykes</a> /
+								<a href="http://twitter.com/lissy_sykes">@lissy_sykes</a> <br>
+							</small>
+						</p>
+					</section>
+					<section>
+						<blockquote>
+							Less is a CSS pre-processor, meaning that it extends the CSS language, 
+							adding features that allow variables, mixins, functions and many other 
+							techniques that allow you to make CSS that is more maintainable, themable
+							and extendable.
+							<br><br>
+							Less runs inside Node, in the browser and inside Rhino. There are also many 
+							3rd party tools that allow you to compile your files and watch for changes.
+						</blockquote>
+					</section>
+				</section>
+				
+				<!-- The problem with CSS -->
+				<section data-background="#FF4646">
+					<section>
+						<h2>The problem with CSS</h2>				
+					</section>
+					<section>
+						<h3>this...</h3>
+						<img src="img/bad_css.png" >
+					</section>
+					<section>
+						<p>
+							Even if you are following good standards, keeping 
+							your CSS tidy can be a real challenge. 
+							Especially when it is a medium or large project or
+							when there are multiple developers working on it.
+							<br><br>
+							It's like it just naturally wants to be spaghetti 
+						</p>
+					</section>
+					<section>
+						<h3>Why does this matter?</h3>
+						<ul>
+							<li><strong>Inconsistencies</strong> will occour.</li>
+							<li><strong>Maintenance</strong> is not easy.</li>
+							<li><strong>Time consuming</strong> to develop, debug and maintain</li>
+							<li>Working with bad code is not very fun</li>
+						</ul>
+					</section>
+				</section>	
+				
+				<!-- The solution  - introduction to pre-processors -->
+				<section data-background="#FF5CC9">
+					<section>
+						<h3>The Solution...</h3>
+						<br><br>
+						<h1>CSS Preprocessors!</h1>
+					</section>
+					
+					<!-- What is a CSS Preprocessor -->
+					<section>
+						<h2>What is a CSS preprocessor?</h2>
+						<p>
+							A CSS preprocessor is basically just a scripting languge that extends 
+							CSS and gives it a more ogranised structure and a bit of extra functionality.
+						</p>
+						<br>
+					</section>
+					
+					<!-- The 3 main pre processors -->
+					<section>
+						<h2>The three most popular CSS pre-processors</h2>
+						<ul>
+							<li>LESS</li>
+							<li>SASS</li>
+							<li>Stylus</li>
+						</ul>
+						<br><br>
+						<a href="http://code.tutsplus.com/tutorials/sass-vs-less-vs-stylus-preprocessor-shootout--net-24320">
+							Comparison of LESS, SASS and Stylus
+						</a>
+					</section>
+				
+				</section>
+				
+				<section data-background="#BF8EFC">
+					<!-- How to set up -->
+					<section>
+						<h2>How to set up LESS</h2>
+						<p>There's a number of different ways you can use LESS, different setups are used for different purposes</p>
+						<ul>
+							<li>In Node.js projects</li>
+							<li>Using a file watcher to compile on file change</li>
+							<li>Compiling on page load with the rel="stylesheet" and type="text/less"</li>
+							<li>Most good IDE's have a built in LESS compiler, or a plugin availible</li>
+							<li>With Rhino</li>
+							<li>Comman Line Compilation</li>
+							<li>Browser Plugins</li>
+							<li>Using online compilers</li>
+						</ul>
+					</section>
+					
+					<!-- Node.js -->
+					<section style="text-align: left;">
+						<h2>Using LESS in Node.js Express</h2>
+						<p>
+							In Node you can just install less-middleware 
+							<pre><code>npm install less-middleware</code></pre>
+							Then
+							<pre><code>var lessMiddleware = require('less-middleware');
+var app = express();
+app.use(lessMiddleware(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));</code></pre>	
+						<br>
+						<small>Alternativley if you are using either GULP or GRUNT build tools then you can compile your less there</small>
+						</p>
+					</section>
+					
+					<!-- Locally compiling LESS -->
+					<section>
+						<h2>Locally compiling your LESS</h2>
+						<p style="font-size: 0.85em">
+							There are utilities for Mac and Windows that look for file changes 
+							in .less files and automatically populate .css or .min.css
+							<br><br>
+							These tools are surprisingly user friendly and you don't notice them
+							running in the background instantly compiling everything <br>
+							(until you get an error, then it'll give you a nice message telling 
+							you what line and what the problem is.) 
+							<br><br>
+							This would be a good tool if you were making a static website or 
+							a(n old school) PHP application.
+							<br><br>
+							My favourite LESS compiler for Windows is WinLess - <a href="http://winless.org/">click here</a>
+						</p>
+					</section>
+					
+					<!-- On page load compilation -->
+					<section>
+						<h2>Compiling on page load</h2>
+						<pre>First indlude less.js <code><script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.js"></script></code></pre>
+						<pre>Then include your less stylesheets <code><link rel="stylesheet/less" type="text/css" href="styles.less" /></code></pre>
+						<br>
+						<p>This would only be used for development, since it would slow you page load time a bit</p>
+					</section>
+				
+					<!-- Online Compilers -->
+					<section>
+						<h2>Online compilters</h2>
+						<p>
+							It's sometimes usful to test out stuff in LESS and see what it looks like in CSS (or visa versa)	<br>
+							For this there are several online tools which will compile live, <a href="http://less2css.org/">less2css.org</a> is quite good
+						</p>
+					</section>
+				</section>
+			
+				<!-- Valid CSS is also valid LESS -->	
+				<section data-background="#3D47D8">
+					<section>
+						<h2>All valid CSS is also valid LESS</h2>
+					</section>
+					<section>
+						<p>
+							Since Less is just an extension to CSS, it is backwards compatible with CSS, 
+							and just adds extra features using existing CSS syntax.
+							<br><br>
+							This makes it really really easy to learn, and give you the fall-back of vanilla CSS.
+						</p>
+					</section>
+					<section>
+						<h2>Documentation</h2>
+						<p>
+							The official Less documentation is very thorough and clear, it covers all 
+							features of core Less and is easy to navigate. 	
+							<br>
+							<a href="http://lesscss.org/features/">lesscss.org</a>
+							<br>
+							It makes for quite a good read too :)
+						</p>
+					</section>
+					<section>
+						<h2>GitHub</h2>
+						<p>
+							Less is opensource and on GitHub, which is also where it's issues are tracked.
+							<br><br>
+							<a href="https://github.com/less/less.js">github.com/less/less.js</a>
+							<br><br>
+							Only had 12,000 stars....
+						</p>
+					</section>
+				</section>
+			
+				<!-- Variables -->
+				<section data-background="#299FD5">
+					<section>
+						<h2>Variables</h2>
+							<p>
+								<small>
+								In traditional CSS the same value was often repeated thoughout your stylesheet,
+								such as a color, font-size, margin size or another value. This makes it hard to 
+								maintain since jsut to make a small adjustment to this value you need to do it many
+								times.
+								</small>
+							</p>
+							<p>
+								<strong>Less fixes this problem with variables</strong>
+							</p>
+							<pre>Declare Variable:<code>@awesome-color: #FF0DC7;</code></pre>
+							<pre>Use Variable:<code>p{ color: @awesome-color; }</code></pre>
+					</section>
+					
+					<section>
+						<h3>Variable usage</h3>
+						<pre>In Less<code>
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+
+#header {
+  color: @light-blue;
+}
+						</code></pre>
+						<pre>Will compile to: <code>
+#header {
+  color: #6c94be;
+}
+						</code></pre>
+					</section>
+				
+				</section>
+				
+				<!-- Mixins -->
+				<section data-background="#26D8C9">
+					<section>
+						<h2>Mixins</h2>
+						<p>Mixins are a way of mixing in properties from one rule set to another</p>
+<pre>Create a class, like: <code>.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}</code></pre>
+
+<pre>Then just call that class like: <code>
+#menu a {
+  color: #111;
+  .bordered;
+}
+
+.post a {
+  color: red;
+  .bordered;
+}</code></pre>
+				</section>
+					
+					
+				<section>
+					<h2>Class or ID Selector</h2>	
+					<p>You can use either the class or the ID selector for mixins</p>
+
+					<pre><code>.a, #b {
+  color: red;
+}
+.mixin-class {
+  .a();
+}
+.mixin-id {
+  #b();
+}</code></pre>
+				</section>
+					
+				<section>
+					<h2>Parenthasis are optional</h2>
+					<p>When you call a mixin parenthais are optional</p>
+<pre>These lines do the same thing<code>.a();
+.a;</code></pre>
+					
+				</section>
+					
+				<section>
+					<h2>Not outputting the mixin</h2>
+					<p>Since a mixin is essentially just a CSS class, by default it will
+						be outputed in the compiled minified CSS. <br><br>
+						If you do not want it to be outputted, you can put parenthasis after it.
+					</p>
+					
+					<pre>This mixin won't show in css: <code>.i-wont-be-outputted{
+	//styles will go here
+}</code></pre>
+				</section>
+			
+				<section>
+					<h2>Selectors in mixins</h2>
+					<p>Mixins can contain more than just properties, they can also contain selectors</p>
+					<pre>Less: 
+<code>.my-hover-mixin() {
+  &:hover {
+    border: 1px solid red;
+  }
+}
+button {
+  .my-hover-mixin();
+}</code></pre>
+ 					<p>will compile to:</p>
+					
+					<pre>CSS: 
+<code>
+button:hover {
+  border: 1px solid red;
+}
+</code></pre>
+					
+				</section>
+					
+				<section>
+					<h2>Namespaces in mixins</h2>	
+					<p>If you want to mixin properties inside a more complicated selector, 
+						you can stack up multiple id's or classes.
+					</p>
+					<pre>Example: 
+<code>
+#outer {
+  .inner {
+    color: red;
+  }
+}
+
+.c {
+  #outer > .inner;
+}
+</code></pre>
+				<p>Name spaces can be useful, since if everything is under one id selector you 
+					can be sure it won't confilct with any other library.
+					<br>
+					<small>You can read more about this and learn about Guarded Namespaces too.</small>
+				</p>
+									
+				</section>
+					
+				<section>
+					<h2>Parametric Mixins</h2>	
+					<p>
+						These are a really useful feature of Less mixins <br>
+						Mixins can take paramaters within the parenthasis in a
+						similar way a function would.
+						<br>
+						There are many times when this is useful for reducing 
+						the amount of code your writing and increasing organisation
+					</p>		
+					<pre>Example of a mixin with paramater 
+<code>.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}</code></pre>
+
+<pre>And then call the mixin like: <code>
+#header {
+  .border-radius(4px);
+}
+.button {
+  .border-radius(6px);
+}	</code></pre>
+					
+				</section>
+					
+				<section>
+					<h2>Parametric mixins can also have default values for their parameters</h2>	
+					<pre>Create Classes
+<code>
+.color-button(@color: #0101DF){
+	border: 1px solid @color;
+	color: @color;
+	&:hover {
+		background: lighten(@color,8);
+  }
+}
+</code></pre>
+					
+<pre>Apply Classes
+<code>
+input.blue-button{.color-button(#0000FF); }
+input.green-button{.color-button(#00FF00); }
+input.red-button{.color-button(); }
+</code></pre>
+
+				</section>
+
+				<section>
+					<h2>More on Mixins</h2>	
+					<p>You can go a lot deeper into mixins</p>
+					<ul>
+						<li>Mixins with multiple paramaters <a href="http://lesscss.org/features
+							/#mixins-parametric-feature-mixins-with-multiple-parameters">link</a>
+						</li>
+						<li>Named Paramaters <a href="http://lesscss.org/features/#mixins-
+							parametric-feature-named-parameters">link</a>
+						</li>
+						<li>The  @arguments variable
+							<a href="http://lesscss.org/features/#mixins-parametric-feature-
+									 the-arguments-variable">link</a>
+						</li>
+						<li>Mixins as functions
+							<a href="http://lesscss.org/features/#mixins-as-functions-feature">Link</a>
+						</li>
+						<li>Passing rulesets to mixins
+							<a href="http://lesscss.org/features/#detached-rulesets-feature"></a>
+						</li>
+					</ul>
+					
+				</section>
+					
+				<section>
+					<h3>Nearly everything that can be done in plain less can also be
+					done within a mixin
+					</h3>
+					<p>You can read more about mixins 
+						<a href="http://lesscss.org/features/#mixins-feature">here on the 
+						mixin page of the official less documentation</a>
+					</p>
+				</section>
+					
+				<section>
+					<h2>Namespaces and Accessors</h2>	
+					<p>You can group your mixins to make everything (even) more organised
+						and offer some encapsulation.
+						<br>
+						This is quite straitforward in Less:
+					</p>
+					<pre><code>
+#profile { 
+  .picture {
+    display: block;
+    border: 1px solid black;
+    &:hover {
+      border-radius: 3px;
+    }
+  }
+  .post-button { ... }
+  .posts { ... }
+}
+					</code></pre>
+					
+					<pre><code>
+#user img {
+  color: orange;
+  #profile > .picture;
+}
+					</code></pre>
+				</section>
+					
+				<section>
+					<h2>Scope</h2>
+					<p>
+						Variable scope in less works pretty much like normal variable scope.
+						<br>
+						Variables declared within a block are local and only accessible within
+						that block.
+						<br>
+						Varialbles declared outside blocks are global and accessible everywhere.
+					</p>
+					
+					<pre><code>
+@var: red;
+
+#page {
+  @var: white;
+  #header {
+    color: @var; // white
+  }
+}
+					</code></pre>
+				</section>
+			</section>
+			
+				<!-- Nested Rules -->
+				<section data-background="#00BA54">
+					<section>
+						<h2>Nested Rules</h2>
+						<p>
+							In traditional CSS you use cascading to access elements inside other elements
+							<br>
+							In Less you can nest rules, which increases the readibility and organisation or
+							code, and also means you don't have to write crazy long cascading lines anymore.
+						</p>
+						<pre>Less example <code>#header {
+  color: black;
+  .navigation {
+    font-size: 12px;
+  }
+  .logo {
+    width: 300px;
+  }
+}</code></pre>
+					<small>This is more concise and mimics the structure of your HTML</small>
+					
+					</section>
+					
+					<section>
+						<h2>Nested directives and bubbling</h2>
+						<p>You can also nest directives (like media or keyframe..) in the 
+							same way as selectors. <br>
+							Directive is placed on top and relative order against other 
+							elements inside the same ruleset remains unchanged. This is 
+							called bubbling.
+						</p>
+						<pre>Less nested directives example <code>
+.screen-color {
+  @media screen {
+    color: green;
+    @media (min-width: 768px) {
+      color: red;
+    }
+  }
+  @media tv {
+    color: black;
+  }
+}
+						</code></pre>
+					</section>
+				</section>
+			
+				<!-- Operations -->
+				<section data-background="#24D900">
+					<h2>In Less a number color or variable can be operated on..</h2>
+					<pre>Example of less operations <code>
+@base: 5%;
+@filler: @base * 2;
+@other: @base + @filler;
+
+color: #888 / 4;
+background-color: @base-color + #111;
+height: 100% / 2 + @filler;
+					</code></pre>
+				</section>
+				
+				<!-- Escaping, Commenting and Importing -->
+				<section data-background="#C0D900">
+	
+					<section>
+						<h2>Comments</h2>
+						<p>Since everyone loves comments, <br>
+							and CSS was lacking inline comments</p>
+						<pre>Block Comments<code>/* I am a block comment
+multiple lines is cool */</code></pre>
+						
+						<pre>Inline Comments <code>//and inline comments have arrived to stylesheets!</code></pre>
+					</section>
+					
+					<section>
+						<h2>Imports</h2>
+						<p>If your working on a large project, you'll probably want to break 
+							your files down to stop one file getting too long.
+						</p>
+						<ul>
+							<li>You can import both CSS and LESS files</li>
+							<li>You only need to specify the file extension if it's not a less file</li>
+							<li>Less variables are still accessible from other files</li>
+						</ul>
+						
+						<pre>Including files in Less example <code>@import "library"; // library.less
+@import "typo.css";</code></pre>
+					</section>
+					
+					<section>
+						<h2>Escaping</h2>
+						<p>Escaping allows you to use any arbitrary string as property or 
+							variable value. Anything inside ~"anything" or ~'anything' is 
+							used as is with no changes except interpolation.
+						</p>
+						<pre>Escaping example <code>
+.weird-element {
+  content: ~"^//* some horrible but needed css hack";
+}
+						</code></pre>
+						<img src="http://media.giphy.com/media/3IOZwDsUoW13i/giphy.gif" alt="#escaping">
+					</section>
+				</section>
+				<!-- Functions -->
+				<section data-background="#D99800">
+					<section>
+						<h2>Built in Functions</h2>
+						<p>
+							Less provides a variety of functions which transform colors, 
+							manipulate strings and do maths. 
+							<br>
+							They are documented fully in the function reference.
+							<br>
+							Using them is pretty straightforward. 
+							<small>
+								The following example uses percentage to convert 0.5 to 50%, 
+								increases the saturation of a base color by 5% and then sets 
+								the background color to one that is lightened by 25% and spun 
+								by 8 degrees:
+							</small>
+							<pre>Example of using s function <code>
+@base: #f04615;
+@width: 0.5;
+
+.class {
+  width: percentage(@width); // returns `50%`
+  color: saturate(@base, 5%);
+  background-color: spin(lighten(@base, 25%), 8);
+}
+							</code></pre>
+						</p>
+					</section>
+			
+					<section>
+						<h2>Less has <u>A LOT</u> of built in functions</h2>
+						<p>
+							The built in functitons in Less covers everything from adjusting 
+							colors,	to resizing images and converting units.
+						</p>
+						<p><a href="http://lesscss.org/functions/">
+							The complete functions reference can be found here
+							</a></p>
+					</section>
+
+				</section>
+			
+				<!-- Extends -->
+				<section data-background="#D97000">
+					<h2>Extend</h2>
+					<p>In Less Extend is a pseudo-class that merges the selector it is 
+						declared under with what it referrences
+					</p>
+<pre>Example: <code>
+nav ul {
+  &:extend(.inline);
+  background: blue;
+}
+.inline {
+  color: red;
+}
+</code></pre>
+					
+				</section>
+				
+				<!-- Imports -->
+				<section data-background="#D93300">
+					<section>
+						<h2>More on Imports</h2>
+						<p>The import feature of less will let you import styles from other stylesheets.</p>
+						<br>
+						<p>Less doesn't mind where you put your import statments, they don't have to come first</p>
+					</section>
+					<section>
+						<h2>File Extensions</h2>
+						<p>@import statments will be treated differently depending on the type of file.</p>
+						<pre><code>
+@import "foo";      // foo.less is imported
+@import "foo.less"; // foo.less is imported
+@import "foo.php";  // foo.php imported as a less file
+@import "foo.css";  // statement left in place, as-is
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Import Options</h2>
+						<p>Less offers several extensions to the CSS @import CSS at-rule to 
+							provide more flexibility over what you can do with external files.
+						</p>
+						<pre>Syntax:<code>@import (keyword) "filename";</code></pre>
+					
+					</section>
+					<section>
+					<strong>The following import directives have been implemented:</strong>	
+							<ul>
+								<li>reference: use a Less file but do not output it</li>
+								<li>inline: include the source file in the output but do not process it</li>
+								<li>less: treat the file as a Less file, no matter what the file extension</li>
+								<li>css: treat the file as a CSS file, no matter what the file extension</li>
+								<li>once: only include the file once (this is default behavior)</li>
+								<li>multiple: include the file multiple times</li>
+								<li>optional: continue compiling when file is not found</li>
+								<li>More than one keyword per @import is allowed, you will have to use commas to seperate the keywords:</li>
+								<pre>Example <code> @import (optional, reference) "foo.less";</code></pre>
+							</ul>
+					</section>
+				</section>
+			
+				<!-- Mixin Guards -->
+				<section data-background="#721313">
+					<section>
+						<h2>Mixin Guards</h2>
+						<p>Conditional statements</p>
+						<pre><code>.mixin (@a) when (lightness(@a) >= 50%) {
+  background-color: black;
+}
+.mixin (@a) when (lightness(@a) < 50%) {
+  background-color: white;
+}
+.mixin (@a) {
+  color: @a;
+}</code></pre>
+
+<pre><code>.class1 { .mixin(#ddd) }
+.class2 { .mixin(#555) }</code></pre>
+					</section>
+					<section>
+						<p>There are lots of times when this is useful</p>
+						<pre>
+						<code>@media: mobile;
+
+.mixin (@a) when (@media = mobile) { ... }
+.mixin (@a) when (@media = desktop) { ... }
+
+.max (@a; @b) when (@a > @b) { width: @a }
+.max (@a; @b) when (@a < @b) { width: @b }
+						</code>
+						</pre>
+						
+					</section>
+				</section>
+			
+			
+			
+			
+			
+				<!-- Less modules -->
+				<section>
+					<h2>Less Modules</h2>
+					<p>
+						And as if there weren't already enough features in Less, there's alos loads of frameworks,
+						modules and libraries to add additional structure and functionality to Less.
+						<br>
+						These are usually used for more specific purposes 
+						<br>
+						<a href="http://lesscss.org/usage/#frameworks-using-less-mixin-libraries">See here for more</a>
+					</p>
+				</section>
+
+				
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

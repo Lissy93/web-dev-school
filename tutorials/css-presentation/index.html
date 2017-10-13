@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS Tutorial</title>
+
+		<meta name="description" content="CSS is the simple language used to style and add fromating to your HTML sites,
+		this tutorial will give you a broad overview of what can be done with is">
+		<meta name="author" content="Alicia Sykes">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Custom styles added by alicia @Lissy_Sykes -->
+		<link rel="stylesheet" href="css/custom-styles.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- All Slides go within this container -->
+			<div class="slides">
+
+				<!-- Title Slide -->
+				<section>
+					<h1>CSS</h1>
+					<h3>Cascading Style Sheets</h3>
+					<h4>aka making your HTML pretty</h4>
+					<p>
+						<small>Created by <a href="http://aliciasykes.com">Alicia Sykes</a> /
+							<a href="http://twitter.com/lissy_sykes">@lissy_sykes</a> <br>
+							Presentation built with <a href="https://github.com/hakimel/reveal.js">reveal.js</a> by
+							<a href="http://hakim.se">Hakim El Hattab</a>
+						</small>
+					</p>
+				</section>
+
+				<!-- What is CSS Slide -->
+				<section >
+					<h2>What is CSS?</h2>
+					<p>
+						CSS stands for cascading stylesheets, it is a language used for describing the look and
+						formatting of a document written in HTML.
+					</p>
+					<b>Example</b>
+<pre><span>CSS Code:</span>
+<code>p.myText{
+	color: blue;
+	text-deccoration: underline;
+}</code>
+</pre>
+
+<pre><span>HTML Code:</span>
+<code><p class="myText">
+  Hello, I am now blue underlined text!
+</p></code>
+</pre>
+				</section>
+
+				<!-- Introduction to selectors slide group -->
+				<section data-background="#0A4330">
+
+					<!-- First slide of introduction to slectors -->
+					<section>
+						<h2>Introduction to selectors</h2>
+						<h5>What are CSS Selectors?</h5>
+						<p>CSS selectors are <em>patterns</em> used to select which elements you want to style</p>
+						<br>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+
+					<!-- Applying same styles multiple elems -->
+					<section>
+						<h2>Applying the same styles to multiple elements</h2>
+						<p>One of the factors that makes CSS so good, is that you can apply the same styles/ formatting to multiple elements.</p>
+						<p>This of course means writig less, and loading less at run time, not to mention much more maintainable code.</p>
+					</section>
+
+					<!-- Example of applying mulple selectorss -->
+					<section>
+						<h2>Example of reusing CSS style sets</h2>
+						<pre><span>CSS Code:</span>
+<code>.importantText{
+	color: red;
+	font-weight: bold;
+	}</code>
+</pre>
+
+<pre><span>HTML Code:</span>
+<code><h2 class="importantText">
+  I'm a title, the styles in the .importantText
+  class have been applied to me
+</h2>
+
+<p class="importantText">
+  Hello, I am some important text, that's why I am red and bold
+</p></code>
+</pre>
+					</section>
+
+					<!-- The element tag selector -->
+					<section>
+					<h2>The Element Selector</h2>
+						<p>You can easily select all elements of a certain element (such as div,span or h3)</p>
+						<pre><span>This CSS will make <b>all h4 elements</b> size 18px and center alligned</span>
+<code>h4{
+  font-size: 18px;
+  text-allign: center;
+}</code>
+</pre>
+
+<pre><span>This will target all <b>div elements with the class='squareBox'</b> <br>and will apply an equal height and width of 20 em and a 1px black border</span>
+<code>div.squareBox{
+  width: 20em;
+  height: 20em;
+  border: 1px solid black;
+}</code>
+</pre>
+				</section>
+
+				</section>
+
+				<!-- CSS Comments -->
+				<section>
+					<h2>CSS Comments</h2>
+					<p>
+						Often you want to supllly a bit of extra information about a set of styles, such as what the
+						purpose of it is, where it's used etc.. This can make your stylesheet more maintainable in the
+						future and easier to understand for other developers.
+					</p>
+					<p><b>Comments are ignored by the browser</b></p>
+
+					<pre><span>The syntax for a comment</span><code>/* This is a comment */</code></pre>
+
+					<pre><span>Example:</span>
+<code>.boldText{
+  font-weight:bold; /* This makes the text bold - who'd have guessed */
+  } </code></pre>
+				</section>
+
+				<!-- Structure of CSS styles -->
+				<section data-background="#370A43">
+
+					<section>
+					<h2>Structure of CSS styles</h2>
+					<p>
+						Each set of CSS styles is layd out in the same structure, with the following parts
+					</p>
+					<ul>
+						<li>A selector</li>
+						<li>Open curley brace to surround styles <strong>{</strong> </li>
+						<li>New line for each style</li>
+						<li>Style name (e.g. background) followed by colon (:) followed by value (e.g. red) followed by semicolon(;)</li>
+					</ul>
+					</section>
+
+					<section>
+						<h2>Example</h2>
+						<p>These example should illustrate the structure of CSS style sets</p>
+<pre>
+<code>div.wrapper{
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid grey;
+}</code>
+</pre>
+
+<pre>
+<code>.titleText{
+	font-size: 20px;
+	text-align: center;
+	color: orange;
+	}</code>
+</pre>
+						<pre><code>.smallText{ font-size: 10px; }</code></pre>
+					</section>
+
+				</section>
+
+				<!-- HTML Colors -->
+				<section>
+
+					<!-- color intro -->
+					<section data-background="#FA58F4">
+						<h2>Using Colors in HTML and CSS</h2>
+						<p>
+							If we denoted colors by just 'red', 'blue', 'green'... we'd soon run out of colors, also these
+							colors are not clearly defined, we often need to specify very particular colors and shades.
+							There are several ways we do this.
+						</p>
+						<ul>
+							<li>Hexadecimal colors</li>
+							<li>RGB colors</li>
+							<li>RGBA colors</li>
+							<li>HSL colors</li>
+							<li>HSLA colors</li>
+							<li>Predefined/Cross-browser color names</li>
+						</ul>
+					</section>
+
+					<!-- HEX -->
+					<section>
+						<h2>Hex</h2>
+						<p>
+							Hexadecimal color or hex, is the most comon way to specify color values it's supported in all browsers.
+						</p>
+						<p>
+							A hexadecimal color is specified with: #RRGGBB, where the RR (red), GG (green) and BB (blue)
+							hexadecimal integers specify the components of the color. All values must be between 0 and FF.
+						</p>
+<pre><code>.redText   { color: #ff0000;}   /* red */
+.greenText { color: #00ff00;}   /* green */
+.blueText  { color: #0000ff;}   /* blue */</code></pre>
+
+						<p>
+							Developers usually use a color picker to choose the perfect color, it's quicker.
+							For example <a href="http://html-color-codes.info/">http://html-color-codes.info/</a>
+						</p>
+					</section>
+
+					<!-- RGB -->
+					<section>
+						<h2>RGB and RGBA</h2>
+						<p>
+							RGB also is supported in all majour browsers. It is similar in the way that you have 3 values
+							red, green and blue. Each can be between 0 and 225. RGBA also has a 4th value, alpha which
+							is transparancy and is between 0 ant 10.
+						</p>
+<pre><code>.redBackground  { background-color: rgb(255, 0, 0); } /* no alpha */
+.greenBackground{ background-color: rgba(0, 255, 0, 0.8); }
+.blueBackgeound { background-color: rgba(0, 0, 255, 0.3); } </code></pre>
+
+
+					</section>
+
+					<!-- Using colors -->
+					<section>
+						<h2>Which attributes can you assing color to?</h2>
+						<p>Here are just a few places you can use color on your pages,
+							we'll look at more of these later on</p>
+<pre><code>.myVeryColorfullElement{
+  background:    #FF00D5;    /* element background */
+  color:         #8900FF;    /* text color */
+  border-color:  #3300FF;    /* color of border */
+  outline-color: #008DFF;    /* color of outline */
+  text-deccoration-color: #00FFF3; /* underline color */
+  box-shadow: 7px 7px 3px #00FF26; /* color shadow for objects */
+  text-shadow:    2px 3px #CDFF00; /* color text shadow */
+}
+</code></pre>
+					</section>
+
+				</section>
+
+
+				<!-- Further CSS selectors -->
+				<section data-background="#A1A1A1">
+					<section>
+						<h2>Further CSS Selectors</h2>
+						<p>Earlier we only touched on selectors, a lot more can be done when combining selectors.</p>
+					</section>
+
+					<!-- Spaces do matter -->
+					<section>
+						<h2>Examples</h2>
+						<small>Spaces <strong>DO</strong> matter</small	>
+						<pre><span> /* Makes all p elements text color blue*/</span><code>p{ color: #3300FF; }</code></pre>
+						<br>
+						<pre><span> /* Makes all elements with class="myClass" text color green*/</span><code>.myClass{ color: #008DFF; }</code></pre>
+						<br>
+						<pre><span> /* Makes all div elements with the class="myClass" text color pink*/</span><code>div.myClass{ color: #FF00D5; }</code></pre>
+						<br>
+						<pre><span> /* Makes all elements with class="myClass" <strong>inside</strong> a div text col purple*/</span><code>div .myClass{ color: #8900FF; }</code></pre>
+					</section>
+
+					<!-- Multiple selectors -->
+					<section>
+						<h2>Multiple selectors</h2>
+						<p>You can use multiple selectors on a style set very easily, just seperate them with a comma</p>
+						<pre><span> /* Makes all p and h1 and h2 elements text color blue */</span><code>p, h1, h2{ color: #3300FF; }</code></pre>
+						<br>
+						<pre><span> /* Makes all p elements only h2 elements that have the class="normalText" color orange*/</span><code>p, h2.normalText{ color: #FF8000; }</code></pre>
+ 						<br>
+						<pre><span> /* Makes all h3 elements AND all span text INSIDE a div element that has a class="cow" black and white */</span><code>h3, div .cow{ color: #FFFFFF; background: #000000;  }</code></pre>
+
+					</section>
+
+					<!-- THe id selector -->
+					<section>
+						<h2>The ID selector</h2>
+						<p>The id selector works in much the same way as the class selector with 2 differences</p>
+							<ul>
+							<li><small>
+								Instead of the selector begining with a "." for class, it should begin with a "#" for id
+							</small></li>
+							<li><small>
+								Because the id attribute in valid HTML must be unique to each element, classes with the
+								id selector can only be used onece, they are not reuable. For this reason it is somethimes
+								considered bad practice to use this selector at all in some style guides.
+							</small></li>
+						</ul>
+						<pre><span>CSS code</span><code>#i-am-unique{ color: pink; }</code></pre>
+						<pre><span>HTML code</span><code><p id="i-am-unique">Hello World!</p></code></pre>
+					</section>
+
+					<!--The All Selector--->
+					<section>
+						<h2>The all selector</h2>
+						<small>This selects all elements</small><br>
+						<small>It doesn't have much use on it's own, but can be combined with other slectors</small>
+						<pre><span>The all selecor [selects all]</span><code>* { color: green; }</code></pre>
+					</section>
+				</section>
+
+				<!--- CSS Box Model -->
+				<section data-background="#98BF21">
+					<h2>CSS Box Model</h2>
+					<p>All HTML elements can be considered as boxes in terms of the CSS box model, which is
+						essentially a box that wraps content. The diagram below best illustrates this.</p>
+					<img src="http://www.w3schools.com/css/box-model.gif" alt="css box model diagram">
+				</section>
+
+				<!-- CSS Units -->
+				<section data-background="#5CA9FF">
+					<section>
+						<h2>CSS Units</h2>
+						<p>
+							Used to set the sizes of text and components on a web page.<br>
+							Sizes in CSS can be absolute or relative.
+						</p>
+						
+					</section>
+					<section>
+						<h2>CSS Units</h2>
+						<p>
+							In CSS there are different units used to express lengh and size. When you specify a size, you
+							give a number followed by it's units. For example "width: 10px;" or "height: 2em;"
+							<br>
+							There must be no white space between the number and it's units.
+							<br>The only number that doesn't need a unit, and shouldn't have one is zero 0.
+							<br>
+							For some CSS properties negetive sizes are allowed.
+							(e.g. margin-left: -10px; will actuall pull the object left 10px rather than push it out)
+						</p>
+					</section>
+					<!-- px -->
+					<section>
+						<h2>Px</h2>
+						<p>	Pixels (px) are the easiest to use unit, they are fixed, and each pixel is equal to one pixel
+							on the users screen. They come with the big disadvantage of not being very responsive and hence
+							are not a good chice if you'd like your web page to respond perfectly to the users screen size
+						</p>
+					</section>
+					<section>
+						<h2>Percentage %</h2>
+						<p>	Percentage works by using the partent container as a 100%, so if your html body is 100%, and you
+							create a div inside it to fill 40% it will fill 40% of the body and hence the screen. These
+							can allow you to build responsive websites, but can be tricky to work with if your just
+							starting out.
+						</p>
+						<strong>Remember, the % unit fills a percentage of the parent element not necciasrily the screen</strong>
+					</section>
+
+					<!-- em -->
+					<section>
+						<h2>em</h2>
+						<p>
+							em is another responsive unit, and generally a lot easier to use the %
+							It is releteve to the font size of the element, and that is usually relevant to the
+							default font size of the device too.
+						</p>
+					</section>
+				</section>
+
+				<!-- Formatting Text -->
+				<section data-background="#A1A1A1" >
+					<!-- Title -->
+					<section data-background-transition="convex">
+						<h2>Formatting Text with CSS</h2>
+					</section>
+
+					<!-- text-properties -->
+					<section>
+						<h2>Text Formating</h2>
+						<pre><span>Text color</span><code>p{color: #00FF00; }</code></pre>
+						<pre><span>Text allignment</span><code>p{ text-align: right; }</code></pre>
+						<pre><span>Text underline / overline/ strikethough </span><code>p{ text-decoration: overline; }</code></pre>
+						<pre><span>Text transformation (ippercase, lowercase, capitalize) </span><code>p{ text-transformation: capitalize; }</code></pre>
+						<pre><span>Text indentation (size in any unit accepted) </span><code>p{ text-indention: 40px; }</code></pre>
+					</section>
+
+
+					<!--font-properties-->
+					<section>
+						<h2>Fonts</h2>
+						<pre><span>Font family (ie font)</span><code>p{ font-family: "Times New Roman", Times, serif; }</code></pre>
+						<pre><span>Font style (italic, oblique, normal)</span><code>p{ font-style: italic; }</code></pre>
+						<pre><span>Font size (number with unit px/em/%...) </span><code>p{ font-size: 30px; }</code></pre>
+						<pre><span>Font weight (in number 100-500 or text) </span><code>p{ font-weight: bold; }</code></pre>
+						<pre><span>Font varient (such as caps) </span><code>p{ font-varient: small-caps; }</code></pre>
+
+					</section>
+
+				</section>
+
+
+
+				<!--Advanced selectors -->
+				<section data-background="#A90F0F">
+
+					<!--advanced selectors intro -->
+					<section>
+						<h2>Advanced Selectors</h2>
+						<p>
+							There is so much more you can do with selectors, you can use them to target very specific
+							parts of your web page and combine them for further better results.
+						</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+
+					<!-- [attribute] Selector -->
+					<section>
+						<h2>[attribute] Selector</h2>
+						<p>This selector selects all elements with the matching attribute</p>
+						<pre><span>Makes all links to this tutorial site color red</span><code>a[href="http://web-dev.as93.net"] { color: red; }</code></pre>
+						<pre><span>Selects all input elements of type text</span><code>input[type="text"] { padding: 3px; }</code></pre>
+						<pre><span>Selects all a elements that are a sub-page of as93.net </span><code>a[href^="http://as93.net"] { color: red; }</code></pre>
+
+					</section>
+
+					<section>
+						<h2>More Selectors</h2>
+						<table style="font-size: 0.6em;">
+							<thead><tr><td>Selector</td><td>Example</td><td>Description</td></tr></thead>
+							<tr>
+								<td>elementp</td>
+								<td>p</td>
+								<td>Selects all p </td>
+							</tr>
+							<tr>
+								<td>element,element</td>
+								<td>div, p</td>
+								<td>Selects all div elements and all p elements</td>
+							</tr>
+							<tr>
+								<td>element element</td>
+								<td>div p</td>
+								<td>Selects all p elements inside div elements</td>
+							</tr>
+							<tr>
+								<td>element>element</td>
+								<td>div > p</td>
+								<td>Selects all p elements where the parent is a div element</td>
+							</tr>
+							<tr>
+								<td>element+element</td>
+								<td>div + p</td>
+								<td>Selects all p elements that are placed immediately after div elements</td>
+							</tr>
+							<tr>
+								<td>element1~element2</td>
+								<td>p ~ ul	</td>
+								<td>Selects every ul element that are preceded by a p element</td>
+							</tr>
+
+						</table>
+					</section>
+				</section>
+
+
+				<section data-background="linear-gradient(red, orange)">
+					<h2>
+						CSS Gradients
+					</h2>
+					<pre><code>background-image: linear-gradient(red, orange);</code></pre>
+					<a href="http://www.colorzilla.com/gradient-editor/">
+						Colorzilla tool for creating gradients
+					</a>
+				</section>
+				
+				<section data-background="#FDF500">
+					<h2>
+						Float Propert of CSS
+					</h2>
+					<pre><code>div{float:left;}</code></pre>
+				</section>
+				
+				<section data-background="#F8B5FF">
+					<section>
+						<h2>Pseudo Class Selectors</h2>
+						<p>
+							Pseudo class selectors are used to define a special state of an element
+						</p>
+						<br>
+						<p>They can be split into 5 main categories</p>
+						<ul>
+							<li>Link related</li>
+							<li>Input related</li>
+							<li>Position related</li>
+							<li>Text related</li>
+						</ul>
+					</section>
+				
+				</section>
+
+				<section data-background="#4285F4">
+					<h2>
+						How to make a HTML5 + CSS3 Navigation bar for your website
+					</h2>
+					<p>
+						Pretty much all modern web apps and sites have a navigation bar at the top,
+						because this is what users are used to and it makes finding pages very quick and easy.
+					</p>
+				</section>
+				
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
